@@ -1,0 +1,43 @@
+# Site settings
+title: Ali Mahzoun
+description: 'Still working on this website...'
+url: 'https://mahzoun99.github.io'
+# google_analytics: 'UA-XXXXXX-X'
+# disqus_shortname: 'your-disqus-name'
+# disable_landing_page: true
+
+author:
+  name: 'Ali Mahzoun'
+  email: mahzoun99@gmail.com
+  # twitter_username: 
+  # facebook_username: 
+  github_username:  mahzoun99
+  linkedin_username:  alimahzoun
+
+defaults:
+  -
+    scope:
+      path: ''
+      type: 'posts'
+    values:
+        layout: 'post'
+
+# Build settings
+destination: _site
+paginate: 10
+permalink: /:year/:title/
+markdown: kramdown
+highlighter: rouge
+
+sass:
+    sass_dir: _sass
+    style: compressed
+
+kramdown:
+  # use Github Flavored Markdown
+  input: GFM
+  # do not replace newlines by <br>s
+  hard_wrap: false
+
+plugins: ['jekyll-paginate']
+exclude: ['README.md', 'Gemfile', 'Gemfile.lock']

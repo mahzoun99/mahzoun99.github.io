@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+    
+    <url>
+      <loc>https://mahzoun99.github.io/2016/welcome-to-jekyll/</loc>
+      
+        <lastmod>2016-01-08T18:34:23+03:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+    
+  
+  
+    
+  
+    
+    <url>
+      <loc>https://mahzoun99.github.io/feed.xml</loc>
+      
+        <lastmod>2022-11-18T17:45:32+03:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://mahzoun99.github.io/humans.txt</loc>
+      
+        <lastmod>2022-11-18T17:45:32+03:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+  
+    
+    <url>
+      <loc>https://mahzoun99.github.io/js/main.js</loc>
+      
+        <lastmod>2022-11-18T17:45:32+03:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://mahzoun99.github.io/css/main.css</loc>
+      
+        <lastmod>2022-11-18T17:45:32+03:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+  
+    
+  
+    
+    <url>
+      <loc>https://mahzoun99.github.io/assets/css/style.css</loc>
+      
+        <lastmod>2022-11-18T17:45:32+03:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+</urlset>
