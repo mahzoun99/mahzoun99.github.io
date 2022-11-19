@@ -1,6 +1,8 @@
 # mahzoun99.github.io
-A Jekyll Theme, based on the Uno-Theme with a list of projects as Timeline.
+Jekyll-Uno - a minimal, responsive theme for Jekyll based on the [Uno](https://github.com/daleanthony/Uno) theme for Ghost.
 
+> :warning:
+  This theme requires ruby and rubygems installed
 
 ## Source/Installation/Setup
 1. Download or clone repo `git clone git@github.com:joshgerdes/jekyll-uno.git`
