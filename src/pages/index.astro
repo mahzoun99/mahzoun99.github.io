@@ -1,0 +1,55 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
+
+const projects = (await getCollection('projects'))
+	.filter(({ data }) => data.featured)
+	.sort((a, b) => b.data.year - a.data.year)
+	.slice(0, 3);
+---
+
+<Layout>
+	<div id="top" class="hero">
+		<div class="hero-rune" aria-hidden="true">ᚠ ᛗ ᛋ</div>
+		<div class="hero-portrait" aria-hidden="true">
+			<span class="portrait-orbit"></span>
+			<img src={`${base}face-cutout.png`} alt="" />
+			<span class="portrait-caption">ᚠ / maker</span>
+		</div>
+		<p class="eyebrow">Software Engineer - HPC Specialist [Based in Lëtzebuerg]</p>
+		<h1>Built by/for the <em>curious.</em></h1>
+		<p class="hero-copy">I’m Ali — a developer who turns ambitious ideas into thoughtful digital products, one interface at a time.</p>
+		<div class="social-links" aria-label="Social links">
+			<a href="https://www.linkedin.com/in/alimahzoun/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+				<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 8.5H3V21h3.5V8.5ZM4.75 3A2.05 2.05 0 1 0 4.75 7.1 2.05 2.05 0 0 0 4.75 3ZM21 13.84c0-3.77-2.01-5.52-4.7-5.52-2.16 0-3.13 1.19-3.67 2.03V8.5H9.13V21h3.5v-6.19c0-1.63.31-3.2 2.32-3.2 1.98 0 2 1.85 2 3.3V21H21v-7.16Z"/></svg>
+			</a>
+			<a href="https://github.com/mahzoun99" target="_blank" rel="noreferrer" aria-label="GitHub">
+				<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-3 18.51c.48.09.66-.21.66-.46v-1.68c-2.7.59-3.27-1.14-3.27-1.14-.44-1.12-1.08-1.42-1.08-1.42-.88-.6.07-.59.07-.59.97.07 1.48 1 1.48 1 .87 1.48 2.28 1.05 2.84.8.09-.62.34-1.05.62-1.29-2.16-.25-4.43-1.08-4.43-4.79 0-1.06.38-1.92 1-2.6-.1-.25-.43-1.23.1-2.56 0 0 .82-.26 2.63 1a9.1 9.1 0 0 1 4.78 0c1.81-1.23 2.63-1 2.63-1 .53 1.33.2 2.31.1 2.56.62.68 1 1.54 1 2.6 0 3.72-2.27 4.54-4.44 4.78.35.3.66.9.66 1.82v2.7c0 .26.17.56.67.46A9.5 9.5 0 0 0 12 2.5Z"/></svg>
+			</a>
+			<a href="mailto:mahzoun99@gmail.com" aria-label="Email">
+				<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5h18v13H3v-13Zm1.5 1.5v.35l7.5 4.74 7.5-4.74V7l-7.5 4.74L4.5 7Z"/></svg>
+			</a>
+		</div>
+		<div class="hero-actions">
+			<a class="button" href="#work">See my work <span aria-hidden="true">↓</span></a>
+			<a class="button secondary" href={`${base}cv`}>View CV <span aria-hidden="true">↗</span></a>
+		</div>
+	</div>
+	<section id="about" class="section about-grid">
+		<div><p class="section-label">/ about</p></div>
+		<div><p>I care about the space where <strong>good ideas, clear design, and solid engineering</strong> overlap. Currently, I’m exploring new ways to make the web feel a little more human.</p><div class="hero-actions"><a class="button secondary" href="mailto:mahzoun99@gmail.com">Get in touch ↗</a></div></div>
+	</section>
+	<section id="work" class="section">
+		<div class="section-heading"><h2>Selected work</h2><a class="section-label" href={`${base}projects`}>View all works →</a></div>
+		<div class="project-grid">{projects.map((project, index) => <a class="project-card" href={project.data.url ?? `${base}projects`} target={project.data.url ? '_blank' : undefined}><span class="project-number">{String(index + 1).padStart(2, '0')}</span><span class="project-arrow" aria-hidden="true">↗</span><h3>{project.data.title}</h3><p>{project.data.description}</p><span class="project-tags">{project.data.tags.join(' · ')}</span></a>)}</div>
+	</section>
+	<section class="section">
+		<div class="section-heading"><h2>Latest thoughts</h2><a class="section-label" href={`${base}blog`}>All writing →</a></div>
+		<div class="writing-list">
+			<a class="writing-item" href={`${base}blog`}><time datetime="2026-01-12">12.01.26</time><h3>Notes on building things that last</h3><span>Read →</span></a>
+			<a class="writing-item" href={`${base}blog`}><time datetime="2025-11-08">08.11.25</time><h3>The quiet power of a good constraint</h3><span>Read →</span></a>
+			<a class="writing-item" href={`${base}blog`}><time datetime="2025-09-24">24.09.25</time><h3>Small interfaces, big feelings</h3><span>Read →</span></a>
+		</div>
+	</section>
+</Layout>

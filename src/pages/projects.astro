@@ -1,0 +1,10 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+const projects = await getCollection('projects');
+const base = import.meta.env.BASE_URL;
+---
+<Layout title="Projects - Ali">
+	<div class="page-header"><p class="section-label">/ archive of works</p><h1>Things I’ve<br /><em>made.</em></h1><p class="hero-copy">A collection of products, experiments, and useful little tools.</p></div>
+	<section class="section"><div class="project-grid">{projects.map((project, index) => <a class="project-card" href={project.data.url ?? '#'} target={project.data.url ? '_blank' : undefined}><span class="project-number">{String(index + 1).padStart(2, '0')}</span><h3>{project.data.title}</h3><p>{project.data.description}</p><span class="project-tags">{project.data.tags.join(' · ')}</span></a>)}</div></section>
+</Layout>

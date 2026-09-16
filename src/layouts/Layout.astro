@@ -1,0 +1,47 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { title = 'Ali Mahzoun', description = 'Personal website of Ali Mahzoun.' } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/tree-of-life-2.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content={description} />
+		<meta name="theme-color" content="#0b0d0d" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<header class="site-header">
+			<a class="brand" href={base} aria-label="Home">
+				<span class="brand-mark">~/</span>Ali Mahzoun<span class="brand-dot">.</span>
+			</a>
+			<nav aria-label="Main navigation">
+				<a href={`${base}#about`}>About</a>
+				<a href={`${base}projects`}>Projects</a>
+				<a href={`${base}blog`}>Blog</a>
+			</nav>
+		</header>
+		<main>
+			<slot />
+		</main>
+		<footer class="site-footer">
+			<span>© {new Date().getFullYear()} Ali</span>
+			<span>Built with intention · Astro</span>
+			<a href="#top">back to top ↑</a>
+		</footer>
+	</body>
+</html>
